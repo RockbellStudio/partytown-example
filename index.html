@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partytown.js Example</title>
+</head>
+<body>
+    <h1>Partytown.js Example</h1>
+    <h2 id="counter">0</h2>
+    <button id="btn">Increment</button>
+    
+    <!-- Blocking script -->
+    <script type="text/partytown">
+        let counter = 0;
+        let counterEl = document.getElementById('counter');
+        let btn = document.getElementById('btn');
+
+        btn.onclick = function () {
+            counter++;
+
+            for (let i = 0; i < 10000000000; i++) {
+                // long loop
+            }
+
+            counterEl.innerText = counter;
+        }
+    </script>
+
+    <!-- Load Analytics -->
+    <script type="text/partytown">
+        // Your analytics code
+    </script>
+
+    <!-- Load partytown -->
+    <script src="./~partytown/partytown.js"></script>
+</body>
+</html>
